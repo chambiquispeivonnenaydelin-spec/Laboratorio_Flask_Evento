@@ -1,16 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Evento Ficticio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro | Evento Tecnológico 2026</title>
+    <style>
+        :root {
+            --primary: #00f2fe;
+            --secondary: #4facfe;
+            --dark: #121212;
+            --card: #1e1e1e;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            width: 90%;
+            max-width: 400px;
+            border: 1px solid #333;
+        }
+
+        h2 {
+            text-align: center;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 8px;
+            border: 1px solid #444;
+            background: #2a2a2a;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bienvenido al Evento Tecnológico 2026</h1>
-    <p>Este es un evento para aprender Flask y Jinja2.</p>
-    
-    <form action="/registrar" method="POST">
-        <label>Nombre:</label>
-        <input type="text" name="nombre" required>
-        <button type="submit">Inscribirme</button>
-    </form>
+    <div class="container">
+        <h2>Inscripción al Evento</h2>
+        <form action="/registro" method="POST">
+            <div class="input-group">
+                <label>Nombre Completo</label>
+                <input type="text" name="nombre" placeholder="Tu nombre" required>
+            </div>
+            <div class="input-group">
+                <label>Correo Electrónico</label>
+                <input type="email" name="email" placeholder="nombre@correo.com" required>
+            </div>
+            <div class="input-group">
+                <label>Taller de Interés</label>
+                <select name="taller">
+                    <option value="python">Desarrollo con Python</option>
+                    <option value="ia">Inteligencia Artificial</option>
+                    <option value="seguridad">Ciberseguridad</option>
+                </select>
+            </div>
+            <button type="submit">Confirmar Registro</button>
+        </form>
+    </div>
 </body>
 </html>
